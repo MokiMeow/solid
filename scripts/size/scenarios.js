@@ -2861,7 +2861,15 @@ module.exports = [
     // cap unchanged at 14.53 KB, recorded minified 41,284 -> 41,233 B; measured
     // locally (darwin) at 14,553 B (41,233 B minified). Lower only: cap at
     // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
-    limit: "14.53 KB",
+    // Size-Exception (hydration pass, #3904, 2026-10-07): 14.53 KB -> 14.57 KB,
+    // measured at 14,553 B by CI (Size run 37717409111) against `next` @
+    // 8d23a5a13's 14,525 (+28 B; 23 B over the cap; −66 B minified, 41,299 ->
+    // 41,233; recorded 41,284 -> 41,233) — brotli layout only: the pass moves
+    // bytes out of this bundle, the compressor packs the remainder 28 B worse.
+    // Cap set at measured + 10 B rounded up to 0.01 KB; recorded minified
+    // lowered. Accepted by the maintainer 2026-10-07 together with the (g-sc)
+    // SC-page cost.
+    limit: "14.57 KB",
     capMinified: 41233,
     alias: observeAlias
   },
