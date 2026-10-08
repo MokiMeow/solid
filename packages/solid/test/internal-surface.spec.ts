@@ -42,7 +42,10 @@ const INTERNAL = [
   "createRevealOrder",
   // hydration/SSR coordination object and the dev component brand
   "sharedConfig",
-  "$DEVCOMP"
+  "$DEVCOMP",
+  // the server-component half of client hydration (real on the client
+  // entry, a no-op on the server), installed by @solidjs/web/frames' client
+  "enableServerComponentHydration"
 ];
 
 // The container-trace materializer's seams: exported from the client entry at
