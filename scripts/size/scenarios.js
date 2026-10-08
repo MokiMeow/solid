@@ -1479,6 +1479,11 @@ module.exports = [
     // at measured + 10 B rounded up to 0.01 KB. Accepted by the maintainer
     // 2026-10-07 on the condition hello world stays under 10 KB. The cap is
     // frozen again at 9.93 KB.
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // cap unchanged at 9.93 KB, recorded minified 27,872 -> 27,822 B; measured
+    // locally (darwin) at 9,915 B (27,822 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
     limit: floorCaps["app: render + one signal (the simple-app floor)"],
     capMinified: floorMinified["app: render + one signal (the simple-app floor)"],
     alias
@@ -1835,6 +1840,11 @@ module.exports = [
     // (`liveTx`, `holdNode`). Cap set at measured + 10 B rounded up to 0.01 KB.
     // Accepted by the maintainer 2026-10-07 on the condition hello world stays
     // under 10 KB. The cap is frozen again at 17.91 KB.
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 17.91 KB -> 17.70 KB, recorded minified 52,977 -> 52,306 B; measured
+    // locally (darwin) at 17,689 B (52,306 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
     limit: floorCaps["app: hydrating (no stores) with Show/For/Loading/Errored/lazy"],
     capMinified: floorMinified["app: hydrating (no stores) with Show/For/Loading/Errored/lazy"],
     alias
@@ -2305,8 +2315,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "29.19 KB",
-    capMinified: 92263,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 29.19 KB -> 28.94 KB, recorded minified 92,263 -> 91,632 B; measured
+    // locally (darwin) at 28,930 B (91,632 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "28.94 KB",
+    capMinified: 91632,
     alias
   },
   {
@@ -2550,8 +2565,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "12.96 KB",
-    capMinified: 36755,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 12.96 KB -> 12.94 KB, recorded minified 36,755 -> 36,704 B; measured
+    // locally (darwin) at 12,928 B (36,704 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "12.94 KB",
+    capMinified: 36704,
     alias
   },
   {
@@ -2836,8 +2856,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // cap unchanged at 14.53 KB, recorded minified 41,284 -> 41,233 B; measured
+    // locally (darwin) at 14,553 B (41,233 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
     limit: "14.53 KB",
-    capMinified: 41284,
+    capMinified: 41233,
     alias: observeAlias
   },
   {
@@ -3258,8 +3283,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "28.89 KB",
-    capMinified: 86911,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 28.89 KB -> 28.84 KB, recorded minified 86,911 -> 86,860 B; measured
+    // locally (darwin) at 28,823 B (86,860 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "28.84 KB",
+    capMinified: 86860,
     alias: observeAlias
   },
   // Compiled-template scenarios (2026-10-05): the four `app:` fixtures above
@@ -3314,8 +3344,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "10.13 KB",
-    capMinified: 28403,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 10.13 KB -> 10.12 KB, recorded minified 28,403 -> 28,353 B; measured
+    // locally (darwin) at 10,107 B (28,353 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "10.12 KB",
+    capMinified: 28353,
     alias
   },
   {
@@ -3373,7 +3408,12 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "25.24 KB",
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 25.24 KB -> 25.18 KB, recorded minified 79,085 -> 79,085 B; measured
+    // locally (darwin) at 25,165 B (79,085 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "25.18 KB",
     capMinified: 79085,
     alias
   },
@@ -3451,8 +3491,13 @@ module.exports = [
     // chained target reads through to the inner store (`serveDataKey`). Cap
     // set at measured + 10 B rounded up to 0.01 KB. Accepted by the maintainer
     // 2026-10-07: store scenarios only, hello world unchanged.
-    limit: "31.17 KB",
-    capMinified: 99672,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 31.17 KB -> 31.01 KB, recorded minified 99,672 -> 98,995 B; measured
+    // locally (darwin) at 30,991 B (98,995 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "31.01 KB",
+    capMinified: 98995,
     alias
   },
   {
@@ -4092,6 +4137,11 @@ module.exports = [
     // branch's base land under the `dynamicComponent` note's 33,570 /
     // 104,586 (+666 B minified, +338 B brotli). Cap set at measured + 10 B
     // rounded up to 0.01 KB; recorded minified 105,252 B.
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 33.92 KB -> 33.40 KB, recorded minified 105,252 -> 103,087 B; measured
+    // locally (darwin) at 33,387 B (103,087 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
     limit: floorCaps["page: base server components (hydrating + dynamic + frames + sf reference)"],
     capMinified:
       floorMinified["page: base server components (hydrating + dynamic + frames + sf reference)"],
@@ -4320,6 +4370,11 @@ module.exports = [
     // (`liveTx`, `holdNode`). Cap set at measured + 10 B rounded up to 0.01 KB.
     // Accepted by the maintainer 2026-10-07 on the condition hello world stays
     // under 10 KB. The cap is frozen again at 37.59 KB.
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 37.59 KB -> 37.09 KB, recorded minified 117,441 -> 115,130 B; measured
+    // locally (darwin) at 37,073 B (115,130 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
     limit: floorCaps["page: live server components (base + live/GET + action + isPending/latest)"],
     capMinified:
       floorMinified["page: live server components (base + live/GET + action + isPending/latest)"],
@@ -4405,8 +4460,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "35.13 KB",
-    capMinified: 109446,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 35.13 KB -> 34.34 KB, recorded minified 109,446 -> 105,970 B; measured
+    // locally (darwin) at 34,321 B (105,970 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "34.34 KB",
+    capMinified: 105970,
     alias: pageAlias
   },
   {
@@ -4456,8 +4516,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "40.66 KB",
-    capMinified: 122918,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 40.66 KB -> 39.79 KB, recorded minified 122,918 -> 119,469 B; measured
+    // locally (darwin) at 39,774 B (119,469 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "39.79 KB",
+    capMinified: 119469,
     alias: pageAlias
   },
   {
@@ -4506,8 +4571,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "46.02 KB",
-    capMinified: 144223,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 46.02 KB -> 45.52 KB, recorded minified 144,223 -> 141,912 B; measured
+    // locally (darwin) at 45,503 B (141,912 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "45.52 KB",
+    capMinified: 141912,
     alias: pageAlias
   },
   {
@@ -4535,8 +4605,13 @@ module.exports = [
     // into it while it is live (`liveTx`, `holdNode`). Cap set at measured + 10
     // B rounded up to 0.01 KB. Accepted by the maintainer 2026-10-07 on the
     // condition hello world stays under 10 KB.
-    limit: "47.29 KB",
-    capMinified: 148668,
+    // Ratchet (2026-10-07, hydration pass: readShallow/ownKeys, trace-chunk
+    // store adapters, SC installs off hydrate(); local macOS, CI to confirm):
+    // 47.29 KB -> 46.79 KB, recorded minified 148,668 -> 146,357 B; measured
+    // locally (darwin) at 46,773 B (146,357 B minified). Lower only: cap at
+    // measured + 10 B rounded up to 0.01 KB; recorded minified never raised.
+    limit: "46.79 KB",
+    capMinified: 146357,
     alias: pageAlias
   },
   {
